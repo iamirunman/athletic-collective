@@ -1,0 +1,398 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+-->
+<html lang="en">
+  <head>
+    <!-- for fantasy data api -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>The Athletic Collective</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.red-blue.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+  </head>
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+          <h3>The Athletic Collective</h3>
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+          <a href="#home" class="mdl-layout__tab is-active">HOME</a>
+          <a href="#about" class="mdl-layout__tab is active">ABOUT</a>
+
+
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active" id="home">
+
+          <!-- card -->
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">    
+          <div class="mdl-card mdl-cell mdl-cell--12-col">
+            <figure class="mdl-card__media">
+              <img src="http://poppel.com/wp-content/uploads/2015/07/cool-wallpaper-baseball-stadium.jpg" alt="" />
+            </figure>
+            <div class="mdl-card__title">
+              <h1 class="mdl-card__title-text">MLB 2016</h1>
+            </div>
+            <div class="mdl-card__supporting-text">
+              <p>Act like like a total baseball expert at your MLB World Series Viewing Party. If you missed out on the regular season action, just search this year's stats to get caught up.</p>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="http://mlb.mlb.com/stats/sortable.jsp#elem=%5Bobject+Object%5D&tab_level=child&click_text=Sortable+Player+hitting&game_type='R'&season=2016&season_type=ANY&league_code='MLB'&sectionType=sp&statType=hitting&page=1&ts=1487268899445">
+                Search
+              </a>
+            </div>
+          </div class="mdl-grid__menu">
+        </section>
+          
+        <div>
+          <p>
+            <center>
+              <h3>Today In The World Of Sports</h3>
+            </center>
+          </p>
+        </div>
+        <!-- espn feed -->
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+          <div class="mdl-card mdl-cell mdl-cell--12-col">
+            <div class="mdl-card__supporting-text">
+              <h4>ESPN</h4>
+              <div class="container" id = "espnResults">
+            </div>
+          </div>
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3" data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons">more_vert</i>
+          <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+          <div class="mdl-menu__container is-upgraded"><div class="mdl-menu__outline mdl-menu--bottom-right"></div><ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3" data-upgraded=",MaterialMenu">
+            <li class="mdl-menu__item" tabindex="-1">Lorem</li>
+            <li class="mdl-menu__item" disabled="" tabindex="-1">Ipsum</li>
+            <li class="mdl-menu__item" tabindex="-1">Dolor</li>
+          </ul></div>
+        </section>
+        <br>
+        <!-- fox sports feed -->
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+          <div class="mdl-card mdl-cell mdl-cell--12-col">
+            <div class="mdl-card__supporting-text">
+              <h4>FOX SPORTS</h4>
+              <div class="container" id = "foxResults">
+            </div>
+          </div>
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3" data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons">more_vert</i>
+          <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+          <div class="mdl-menu__container is-upgraded"><div class="mdl-menu__outline mdl-menu--bottom-right"></div><ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3" data-upgraded=",MaterialMenu">
+            <li class="mdl-menu__item" tabindex="-1">Lorem</li>
+            <li class="mdl-menu__item" disabled="" tabindex="-1">Ipsum</li>
+            <li class="mdl-menu__item" tabindex="-1">Dolor</li>
+          </ul></div>
+        </section>
+        <br>
+        <!-- bbc sport feed -->
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+          <div class="mdl-card mdl-cell mdl-cell--12-col">
+            <div class="mdl-card__supporting-text">
+              <h4>BBC SPORT</h4>
+              <div class="container" id = "bbcResults">
+            </div>
+          </div>
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3" data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons">more_vert</i>
+          <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+          <div class="mdl-menu__container is-upgraded"><div class="mdl-menu__outline mdl-menu--bottom-right"></div><ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3" data-upgraded=",MaterialMenu">
+            <li class="mdl-menu__item" tabindex="-1">Lorem</li>
+            <li class="mdl-menu__item" disabled="" tabindex="-1">Ipsum</li>
+            <li class="mdl-menu__item" tabindex="-1">Dolor</li>
+          </ul></div>
+        </section>    
+<!-- ======================================================================= -->
+        <section class="section--footer mdl-color--white mdl-grid">
+          <div>
+            
+          </div>
+        </section>
+        
+        </div>
+        <!-- about page -->
+        <div class="mdl-layout__tab-panel" id="about">
+          <section class="section--center mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--12-col">
+              <h3>About</h3>
+              <br>
+                <p>This is a Bootstrap News Feed site that compiles the top stories from ESPN, FOX Sports, and BBC Sports live. Below are cards that will 
+                redirect you to their respective sites to read more. For this project I used a bootstrap page from the <a href="https://getmdl.io/">MDL</a> 
+                website and followed the <a href="https://material.io/guidelines/">Material Design</a> guidelines from Google's webpage. This allowed me to make some cards for the data. 
+                What I did was make calls to the News API from <a href="https://newsapi.org/">newsapi.org</a> to get all the articles and followed by 
+                styling the rest of the site. The button in the bottom right corner will take you to my personal website.
+                </p>
+              <br>
+            </div>
+            <!--espn card -->
+            <div class="mdl-card mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-shadow--2dp">
+              <figure class="mdl-card__media">
+                <img src="http://www.vault.com/media/9733914/espn-logo.jpg" alt="" />
+              </figure>
+              <div class="mdl-card__title">
+                <h1 class="mdl-card__title-text">ESPN</h1>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <p>This will take you to the ESPN webpage to enjoy more great stories from the week</p>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="http://www.espn.com/">
+                  TAKE ME NOW
+                </a>
+              </div>
+            </div>
+            <!--FOX card -->
+            <div class="mdl-card mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-shadow--2dp">
+              <figure class="mdl-card__media">
+                <img src="https://i.vimeocdn.com/portrait/9567052_300x300" alt="" />
+              </figure>
+              <div class="mdl-card__title">
+                <h1 class="mdl-card__title-text">FOX SPORTS</h1>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <p>This will take you to the FOX Sports webpage to enjoy more great stories from the week</p>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="http://www.foxsports.com/">
+                  TAKE ME NOW
+                </a>
+              </div>
+            </div>
+            <!--BBC card -->
+            <div class="mdl-card mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-shadow--2dp">
+              <figure class="mdl-card__media">
+                <img src="http://www.albertascottishbusiness.com/wp-content/uploads/2015/05/BBC-Logo-300x300.jpg" alt="" />
+              </figure>
+              <div class="mdl-card__title">
+                <h1 class="mdl-card__title-text">BBC SPORTS</h1>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <p>This will take you to the BBC Sports webpage to enjoy more great stories from the week</p>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="http://www.bbc.com/sport">
+                  TAKE ME NOW
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+        
+        <section class="section--footer mdl-color--white mdl-grid">
+          <div>
+            
+          </div>
+        </section>
+        
+        <footer class="mdl-mega-footer">
+          <div class="mdl-mega-footer--middle-section">
+            <div class="mdl-mega-footer--drop-down-section">
+              <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+    
+    <a href="http://www.pabloescarcega.com" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">My Site</a>
+    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    
+    <!-- espn call -->
+    <script>
+      var url = "https://newsapi.org/v1/articles?source=espn&sortBy=top&apiKey=bfa3759e786049d9a6f15ea500b2603b";
+      
+      $.ajax({
+        url: url,
+        method: 'GET',
+      }).done(function(result) {
+          var espnResults = result.articles;
+          var html = "";
+          
+          $.each(espnResults, function(i, v) {
+            
+              if(i % 3 == 0) {
+                html += '<div class = "row">';
+              }
+              
+              html += getEspnHtml(v);
+              
+              if(i % 3 == 2 || i == espnResults.length) {
+                html += '</div>'
+              }
+              
+          });
+          
+          $("#espnResults").prepend(html);
+        
+      }).fail(function(err) {
+        throw err;
+      });
+      
+      
+      function getEspnHtml (objArticle) {
+          var html = "";
+          
+          html  += '<div class="col-md-4">'
+                + '<img src="' + objArticle.urlToImage + '" alt="article image" style="width:716px;height:403px;">'
+                + '<h2>' + objArticle.title + '</h2>'
+                + '<p>' + objArticle.description + '</p>'
+                + '<p><a class="btn btn-default" href="'
+                + objArticle.url
+                + '" target="_blank" role="button">VIEW ON ESPN</a></p>'
+                + '<hr>'
+                + '</div>';
+        
+        return html;
+      }
+    </script>
+    <!-- fox call -->
+    <script>
+      var url = "https://newsapi.org/v1/articles?source=fox-sports&sortBy=latest&apiKey=bfa3759e786049d9a6f15ea500b2603b";
+      
+      $.ajax({
+        url: url,
+        method: 'GET',
+      }).done(function(result) {
+          var foxResults = result.articles;
+          var html = "";
+          
+          $.each(foxResults, function(i, v) {
+            
+              if(i % 3 == 0) {
+                html += '<div class = "row">';
+              }
+              
+              html += getFoxHtml(v);
+              
+              if(i % 3 == 2 || i == foxResults.length) {
+                html += '</div>'
+              }
+              
+          });
+          
+          $("#foxResults").prepend(html);
+        
+      }).fail(function(err) {
+        throw err;
+      });
+      
+      function getFoxHtml (objArticle) {
+          var html = "";
+          
+          html  += '<div class="col-md-4">'
+                + '<img src="' + objArticle.urlToImage + '" alt="article image" style="width:716px;height:403px;">'
+                + '<h2>' + objArticle.title + '</h2>'
+                + '<p>' + objArticle.description + '</p>'
+                + '<p><a class="btn btn-default" href="'
+                + objArticle.url
+                + '" target="_blank" role="button">VIEW ON FOX SPORTS</a></p>'
+                + '<hr>'
+                + '</div>';
+        
+        return html;
+      }
+    </script>
+    <!-- bbc call -->
+    <script>
+      var url = "https://newsapi.org/v1/articles?source=bbc-sport&sortBy=top&apiKey=bfa3759e786049d9a6f15ea500b2603b";
+      
+      $.ajax({
+        url: url,
+        method: 'GET',
+      }).done(function(result) {
+          var bbcResults = result.articles;
+          var html = "";
+          
+          $.each(bbcResults, function(i, v) {
+            
+              if(i % 3 == 0) {
+                html += '<div class = "row">';
+              }
+              
+              html += getBbcHtml(v);
+              
+              if(i % 3 == 2 || i == bbcResults.length) {
+                html += '</div>'
+              }
+              
+          });
+          
+          $("#bbcResults").prepend(html);
+        
+      }).fail(function(err) {
+        throw err;
+      });
+      
+      function getBbcHtml (objArticle) {
+          var html = "";
+          
+          html  += '<div class="col-md-4">'
+                + '<img src="' + objArticle.urlToImage + '" alt="article image" style="width:716px;height:403px;">'
+                + '<h2>' + objArticle.title + '</h2>'
+                + '<p>' + objArticle.description + '</p>'
+                + '<p><a class="btn btn-default" href="'
+                + objArticle.url
+                + '" target="_blank" role="button">VIEW ON BBC SPORT</a></p>'
+                + '<hr>'
+                + '</div>';
+        
+        return html;
+      }
+    </script>
+  </body>
+</html>
